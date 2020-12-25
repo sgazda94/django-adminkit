@@ -15,7 +15,7 @@ def index(request):
     context = {}
     context['segment'] = 'index'
 
-    html_template = loader.get_template( 'index.html' )
+    html_template = loader.get_template( 'pages/index.html' )
     return HttpResponse(html_template.render(context, request))
 
 @login_required(login_url="/login/")
@@ -25,7 +25,7 @@ def pages(request):
     # Pick out the html file name from the url. And load that template.
     try:
         
-        load_template      = request.path.split('/')[-1]
+        load_template = 'pages/' + request.path.split('/')[-1]
         context['segment'] = load_template
         
         html_template = loader.get_template( load_template )

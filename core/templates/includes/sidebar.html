@@ -4,56 +4,78 @@
 				<a class="sidebar-brand" href="index.html">
 					<span class="align-middle">AdminKit</span>
 				</a>
+                <ul class="sidebar-nav">
+					<li class="sidebar-header">
+						Moje
+					</li>
+                    <li class="sidebar-item {% if 'courses' in segment %} active {% endif %}">
+						<a class="sidebar-link" href="http://127.0.0.1:8000/courses/">
+							<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Kursy</span>
+						</a>
+					</li>
+
+                </ul>
 
 				<ul class="sidebar-nav">
 					<li class="sidebar-header">
-						Pages
-					</li>
-
-					<li class="sidebar-item {% if 'index' in segment %} active {% endif %}">
-						<a class="sidebar-link" href="/">
-							<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
-						</a>
-					</li>
-
-					<li class="sidebar-item {% if 'profile' in segment %} active {% endif %}">
-						<a class="sidebar-link" href="pages-profile.html">
-							<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
-						</a>
-					</li>
-
-					<li class="sidebar-item {% if 'settings' in segment %} active {% endif %}">
-						<a class="sidebar-link" href="pages-settings.html">
-							<i class="align-middle" data-feather="settings"></i> <span class="align-middle">Settings</span>
-						</a>
-					</li>
-
-					<li class="sidebar-item {% if 'invoice' in segment %} active {% endif %}">
-						<a class="sidebar-link" href="pages-invoice.html">
-							<i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Invoice</span>
-						</a>
-					</li>
-
-					<li class="sidebar-item {% if 'blank' in segment %} active {% endif %}">
-						<a class="sidebar-link" href="pages-blank.html">
-							<i class="align-middle" data-feather="book"></i> <span class="align-middle">Blank</span>
-						</a>
+						App AdminKit
 					</li>
 
 					<li class="sidebar-item">
-						<a href="#auth" data-toggle="collapse" class="sidebar-link collapsed">
-							<i class="align-middle" data-feather="users"></i> <span class="align-middle">Auth</span>
+						<a href="#pages" data-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle"></i> <span class="align-middle">Pages</span>
 						</a>
-						<ul id="auth" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-							<li class="sidebar-item"><a class="sidebar-link" href="pages-sign-in.html">Sign In</a></li>
-							<li class="sidebar-item"><a class="sidebar-link" href="pages-sign-up.html">Sign Up</a></li>
+						<ul id="pages" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item {% if 'index' in segment %} active {% endif %}">
+                            <a class="sidebar-link" >
+                                <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Panel</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="pages-profile.html">
+                                <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profil</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item {% if 'settings' in segment %} active {% endif %}">
+                            <a class="sidebar-link" href="pages-settings.html">
+                                <i class="align-middle" data-feather="settings"></i> <span class="align-middle">Ustawienia</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item {% if 'invoice' in segment %} active {% endif %}">
+                            <a class="sidebar-link" href="pages-invoice.html">
+                                <i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Fakturka</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item {% if 'blank' in segment %} active {% endif %}">
+                            <a class="sidebar-link" href="pages-blank.html">
+                                <i class="align-middle" data-feather="book"></i> <span class="align-middle">Pusta strona</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="#auth" data-toggle="collapse" class="sidebar-link collapsed">
+                                <i class="align-middle" data-feather="users"></i> <span class="align-middle">Auth</span>
+                            </a>
+                            <ul id="auth" class="sidebar-dropdown list-unstyled collapse " data-parent="#pages">
+                                <li class="sidebar-item"><a class="sidebar-link" href="pages-sign-in.html">Sign In</a></li>
+                                <li class="sidebar-item"><a class="sidebar-link" href="pages-sign-up.html">Sign Up</a></li>
+                            </ul>
+                        </li>
 						</ul>
 					</li>
 
-					<li class="sidebar-header">
-						Tools & Components
-					</li>
-					<li class="sidebar-item">
+
+
+                    <li class="sidebar-item {% if 'icons' in segment %} active {% endif %}">
+                            <a href="#tools" data-toggle="collapse" class="sidebar-link collapsed">
+                                <i class="align-middle"></i> <span class="align-middle">Tools & Components</span>
+                            </a>
+                            <ul id="tools" class="sidebar-dropdown list-unstyled collapse " data-parent="#pages">
+                                <li class="sidebar-item">
 						<a data-target="#ui" data-toggle="collapse" class="sidebar-link collapsed">
               				<i class="align-middle" data-feather="briefcase"></i> <span class="align-middle">UI Elements</span>
             			</a>
@@ -78,7 +100,7 @@
 						<a data-target="#forms" data-toggle="collapse" class="sidebar-link collapsed">
               				<i class="align-middle" data-feather="check-circle"></i> <span class="align-middle">Forms</span>
             			</a>
-						<ul id="forms" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+						<ul id="forms" class="sidebar-dropdown list-unstyled collapse " data-parent="#tools">
 							<li class="sidebar-item"><a class="sidebar-link" href="forms-layouts.html">Form Layouts</a></li>
 							<li class="sidebar-item"><a class="sidebar-link" href="forms-basic-inputs.html">Basic Inputs</a></li>
 						</ul>
@@ -89,32 +111,16 @@
               				<i class="align-middle" data-feather="list"></i> <span class="align-middle">Tables</span>
             			</a>
 					</li>
-
-					<li class="sidebar-header">
-						Plugins & Addons
-					</li>
-
-					<li class="sidebar-item {% if 'charts' in segment %} active {% endif %}">
+                        <li class="sidebar-item {% if 'charts' in segment %} active {% endif %}">
 						<a class="sidebar-link" href="charts-chartjs.html">
               				<i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Charts</span>
             			</a>
 					</li>
-
-					<li class="sidebar-item {% if 'maps-google' in segment %} active {% endif %}">
-						<a class="sidebar-link" href="maps-google.html">
-              				<i class="align-middle" data-feather="map"></i> <span class="align-middle">Maps</span>
-            			</a>
+                            </ul>
 					</li>
 
-					<li class="sidebar-header">
-						Auth
-					</li>                    
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="{% url 'logout' %}">
-              				<i class="align-middle" data-feather="log-out"></i> 
-                                <span class="align-middle">Logout</span>
-            			</a>
-					</li>
+
+
 
 				</ul>
 			</div>

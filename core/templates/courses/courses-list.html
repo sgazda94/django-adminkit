@@ -1,0 +1,46 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Blank Page {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+	<main class="content">
+		<div class="container-fluid p-0">
+
+			<h1 class="h3 mb-3">Kursy</h1>
+
+			<div class="row">
+				<div class="col-12">
+					<div class="card">
+						<div class="card-header">
+							<h5 class="card-title mb-0">Empty card</h5>
+						</div>
+						<div class="card-body">
+                                {% for course in courses %}
+                                <article class="media content-section"></article>
+                                  <div class="media-body">
+                                    <h2>{{ course.title }}</h2>
+                                      <h4>{{ course.subject }}</h4>
+                                    <div class="article-metadata">
+                                      <a class="mr-2 ">{{ course.owner.username }}</a>
+                                      <small class="text-muted">{{ course.created |date:"F d, Y" }}</small>
+                                    </div>
+                                    <p class="article-content">{{ course.overview }}</p>
+                                  </div>
+                                </article>
+                            {% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</main>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
