@@ -10,7 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),          # Django admin route
     path("", include("authentication.urls")), # Auth routes - login / register
     path("", include("courses.urls")),
-
+    path('tinymce/', include('tinymce.urls')),
     #always last
     path("", include("app.urls"))  # UI Kits Html files
 
