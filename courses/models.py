@@ -35,11 +35,8 @@ class Module(models.Model):
     course = models.ForeignKey(Course, related_name='modules', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True)
+    content = HTMLField(default='')
 
     def __str__(self):
         return self.title
 
-
-class MyModel(models.Model):
-    title = models.CharField(max_length=200)
-    content = HTMLField()

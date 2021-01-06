@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Subject, Course, Module, MyModel
+from .models import Subject, Course, Module
 
 @admin.register(Subject)
 class SubjectAdmin(admin.ModelAdmin):
@@ -18,6 +18,3 @@ class CourseAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     inlines = [ModuleInline]
 
-@admin.register(MyModel)
-class MyModelAdmin(admin.ModelAdmin):
-    list_display = ['title']
